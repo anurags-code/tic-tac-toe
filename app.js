@@ -32,10 +32,8 @@ function checkwinner() {
       if (current === current1 && current1 === current2 && (current === 'O' || current === 'X')) {
         x = 1;
         if (current === 'O') {
-          alert(`Congratulations, ${player1Name} wins!`);
           document.getElementById("winner").innerText = `${player1Name} wins!`;
         } else {
-          alert(`Congratulations, ${player2Name} wins!`);
           document.getElementById("winner").innerText = `${player2Name} wins!`;
         }
       }
