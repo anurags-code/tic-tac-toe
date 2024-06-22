@@ -16,22 +16,31 @@ const pattern = [
     [2, 4, 6]
 ]
 
+
+
 var x = 0;
-var count=0;
+var count = 0;
+var player1Name = prompt("Enter Player 1's name (0):");
+var player2Name = prompt("Enter Player 2's name (1):");
+
 function checkwinner() {
-    pattern.forEach(element => {
-        if (x === 0) {
-            let current = document.getElementById(element[0]).innerText;
-            let current1 = document.getElementById(element[1]).innerText;
-            let current2 = document.getElementById(element[2]).innerText;
-            if (current === current1 && current1 === current2 && (current==='O'||current==='X')) {
-                x = 1;
-                document.getElementById("winner").innerText=`winned by ${current}`;
-            }
-
-
+  pattern.forEach(element => {
+    if (x === 0) {
+      let current = document.getElementById(element[0]).innerText;
+      let current1 = document.getElementById(element[1]).innerText;
+      let current2 = document.getElementById(element[2]).innerText;
+      if (current === current1 && current1 === current2 && (current === 'O' || current === 'X')) {
+        x = 1;
+        if (current === 'O') {
+          alert(`Congratulations, ${player1Name} wins!`);
+          document.getElementById("winner").innerText = `${player1Name} wins!`;
+        } else {
+          alert(`Congratulations, ${player2Name} wins!`);
+          document.getElementById("winner").innerText = `${player2Name} wins!`;
         }
-    });
+      }
+    }
+  });
 }
 
 boxs.forEach((box) => {
